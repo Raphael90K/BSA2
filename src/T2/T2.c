@@ -94,7 +94,7 @@ int main() {
     pthread_join(thread_b, NULL);
 
     // Ergebnisse in eine CSV-Datei schreiben
-    FILE *csv_file = fopen("semaphore_min_times.csv", "w");
+    FILE *csv_file = fopen("T2_semaphore_min_times.csv", "w");
     if (!csv_file) {
         perror("Fehler beim Öffnen der Datei");
         return 1;
@@ -115,6 +115,6 @@ int main() {
     sem_destroy(&sem_a);
     sem_destroy(&sem_b);
 
-    printf("Ergebnisse in 'semaphore_min_times.csv' gespeichert.\n");
+    printf("Ergebnisse in 'T2_semaphore_min_times.csv' gespeichert.\n");
     return 0;
 }

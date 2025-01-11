@@ -9,6 +9,6 @@ docker run --name client --network tcp_comm_network tcp_client
 
 # server ip bei test 172.18.0.2
 
-docker cp client:/app/tcp_min_times.csv .
+docker cp client:/app/T4_tcp_min_times.csv .
 
 

@@ -102,7 +102,7 @@ int main() {
     pthread_join(thread_b, NULL);
 
     // Ergebnisse in eine CSV-Datei speichern
-    FILE *csv_file = fopen("spinlock_min_times.csv", "w");
+    FILE *csv_file = fopen("T1_spinlock_min_times.csv", "w");
     if (!csv_file) {
         perror("Fehler beim Öffnen der Datei");
         return 1;
@@ -119,7 +119,7 @@ int main() {
     // Datei schließen
     fclose(csv_file);
 
-    printf("Ergebnisse in 'spinlock_min_times.csv' gespeichert.\n");
+    printf("Ergebnisse in 'T1_spinlock_min_times.csv' gespeichert.\n");
 
     return 0;
 }

@@ -78,7 +78,7 @@ void perform_measurements() {
     }
 
     // Ergebnisse in CSV-Datei speichern
-    FILE *csv_file = fopen("tcp_min_times.csv", "w");
+    FILE *csv_file = fopen("T4_tcp_min_times.csv", "w");
     if (!csv_file) {
         perror("Fehler beim Öffnen der CSV-Datei");
         close(client_socket);
@@ -91,7 +91,7 @@ void perform_measurements() {
     }
     fclose(csv_file);
 
-    printf("Ergebnisse in 'tcp_min_times.csv' gespeichert.\n");
+    printf("Ergebnisse in 'T4_tcp_min_times.csv' gespeichert.\n");
     close(client_socket);
 }
 

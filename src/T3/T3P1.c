@@ -50,7 +50,7 @@ int main() {
     zmq_ctx_destroy(context);
 
     // Ergebnisse in eine CSV-Datei speichern
-    FILE *csv_file = fopen("zmq_ipc_min_times.csv", "w");
+    FILE *csv_file = fopen("T3_zmq_ipc_min_times.csv", "w");
     if (!csv_file) {
         perror("Fehler beim Öffnen der Datei");
         return 1;
@@ -62,6 +62,6 @@ int main() {
     }
     fclose(csv_file);
 
-    printf("Ergebnisse in 'zmq_ipc_min_times.csv' gespeichert.\n");
+    printf("Ergebnisse in 'T3_zmq_ipc_min_times.csv' gespeichert.\n");
     return 0;
 }
