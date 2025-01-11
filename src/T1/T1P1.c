@@ -118,7 +118,7 @@ int main() {
     }
 
     // CSV-Header schreiben
-    fprintf(csv_file, "id, mintime\n");
+    fprintf(csv_file, "id,mintime\n");
 
     // Schreibe die Mindestzeiten der Wiederholungen
     for (int repeat = 0; repeat < NUM_REPEATS; repeat++) {
