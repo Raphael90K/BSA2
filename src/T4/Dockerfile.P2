@@ -1,0 +1,5 @@
+FROM gcc:latest
+WORKDIR /app
+COPY T4P2.c .
+RUN gcc T4P2.c -o T4P2
+CMD ["./T4P2"]
