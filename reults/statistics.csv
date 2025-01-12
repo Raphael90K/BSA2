@@ -1,0 +1,8 @@
+Log Name,Mean,95% KI Lower,95% KI Upper,Standard Deviation
+T1_spinlock_min_times.csv,100.87,97.76,103.97,50.1
+T1_spinlock_sm_min_times.csv,280.88,279.73,282.04,18.6
+T2_sema_1P_min_times.csv,3244.45,3082.35,3406.54,2615.3
+T2_sema_2P_min_times.csv,2879.93,2728.45,3031.42,2444.13
+T3_zmq_inproc_min_times.csv,20903.39,20670.64,21136.14,3755.35
+T3_zmq_ipc_min_times.csv,29941.79,29815.16,30068.42,2043.13
+T4_tcp_min_times.csv,17748.49,17639.48,17857.5,1758.84
