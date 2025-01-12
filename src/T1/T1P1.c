@@ -62,7 +62,6 @@ void *thread_a_func(void *arg) {
 
             // Messen, wie lange es dauert, bis Thread A den Lock wiedererhält
             while (atomic_load(&spinlock->turn) != 0); // Warten bis A wieder an der Reihe ist
-
             acquire_spinlock(spinlock);  // Jetzt wartet Thread A und erwirbt den Lock erneut
             long end_time = get_time_in_nanoseconds();
 

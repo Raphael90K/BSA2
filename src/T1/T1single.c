@@ -49,9 +49,8 @@ void *thread_a_func(void *arg) {
             release_spinlock();
             atomic_store(&turn, 1); // Thread B ist an der Reihe
 
-            // Warten, bis Thread A an der Reihe ist
+            // Warten, bis Thread A an der Reihe ist und messen
             while (atomic_load(&turn) != 0);
-            // Messen, wie lange es dauert, bis Thread A den Lock wiedererhält
             acquire_spinlock();
             long end_time = get_time_in_nanoseconds();
 
