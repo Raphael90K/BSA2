@@ -116,3 +116,31 @@ int main() {
     pthread_join(thread_b, NULL);
 
     // Ergebnisse in eine CSV-Datei speichern
+    FILE *csv_file = fopen("T1_spinlock_min_times.csv", "w");
+    if (!csv_file) {
+        perror("Fehler beim Öffnen der Datei");
+        return 1;
+    }
+
+    // CSV-Header schreiben
+    fprintf(csv_file, "id,mintime\n");
+
+    // Schreibe die Mindestzeiten der Wiederholungen
+    for (int repeat = 0; repeat < NUM_REPEATS; repeat++) {
+        fprintf(csv_file, "%d,%ld\n", repeat + 1, min_times[repeat]);
+    }
+
+    // Datei schließen
+    fclose(csv_file);
+
+    printf("Ergebnisse in 'T1_spinlock_min_times.csv' gespeichert.\n");
+
+    // Fehlerstatus ausgeben
+    if (error_detected) {
+        printf("FEHLER: Mindestens ein Thread hat den Ablauf nicht korrekt eingehalten.\n");
+    } else {
+        printf("KEINE Fehler festgestellt: Threads haben korrekt abwechselnd gearbeitet.\n");
+    }
+
+    return 0;
+}
