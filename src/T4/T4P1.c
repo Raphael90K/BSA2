@@ -56,7 +56,7 @@ void perform_measurements() {
             long start_time = get_time_in_nanoseconds();
 
             // Nachricht senden
-            if (send(client_socket, message, strlen(message), 0) < 0) {
+            if (send(client_socket, message, sizeof(message), 0) < 0) {
                 perror("Fehler beim Senden der Nachricht");
                 continue;
             }

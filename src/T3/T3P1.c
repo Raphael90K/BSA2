@@ -31,7 +31,7 @@ int main() {
 
             // Zeit messen: Nachricht senden und empfangen
             long start_time = get_time_in_nanoseconds();
-            zmq_send(socket_send, message, strlen(message), 0);
+            zmq_send(socket_send, message, sizeof(message), 0);
             zmq_recv(socket_recv, message, sizeof(message), 0);
             long end_time = get_time_in_nanoseconds();
 
