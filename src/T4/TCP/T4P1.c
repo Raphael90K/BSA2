@@ -7,7 +7,7 @@
 #include <time.h>
 #include <limits.h>
 
-#define SERVER_IP "172.18.0.2"    // Hostname des Servers im Docker-Netzwerk
+#define SERVER_IP "172.18.0.2"    // Hostname des Servers im Docker-Netzwerk im Container
 #define SERVER_PORT 5555      // Port des Servers
 #define NUM_MEASUREMENTS 100
 #define NUM_REPEATS 1000       // Anzahl der Wiederholungen
