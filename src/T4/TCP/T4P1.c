@@ -19,8 +19,7 @@ long get_time_in_nanoseconds() {
     return ts.tv_sec * 1e9 + ts.tv_nsec;
 }
 
-
-int read(int socket, char *buffer, size_t length) {
+int read_msg(int socket, char *buffer, size_t length) {
     size_t bytes_read = 0;
     while (bytes_read < length) {
         ssize_t result = recv(socket, buffer + bytes_read, length - bytes_read, 0);
@@ -33,7 +32,7 @@ int read(int socket, char *buffer, size_t length) {
         }
         bytes_read += result;
     }
-    return 0; // Erfolgreich gelesen
+    return bytes_read; // Erfolgreich gelesen
 }
 
 // Funktion für die Zeitmessungen
@@ -79,7 +78,7 @@ void perform_measurements() {
             }
 
             // Antwort empfangen
-            if (read(client_socket, response, sizeof(response)) < 0) {
+            if (read_msg(client_socket, response, sizeof(response)) < 0) {
                 perror("Fehler beim Empfang der Antwort");
                 continue;
             }

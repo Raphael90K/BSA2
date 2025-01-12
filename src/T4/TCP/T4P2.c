@@ -21,7 +21,7 @@ int read_msg(int socket, char *buffer, size_t length) {
         }
         bytes_read += result;
     }
-    return 0; // Erfolgreich gelesen
+    return bytes_read; // Erfolgreich gelesen
 }
 
 void run_server() {

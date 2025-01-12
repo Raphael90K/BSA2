@@ -4,7 +4,7 @@ docker network create tcp_comm_network
 docker build -t tcp_client -f Dockerfile.P1 .
 docker build -t tcp_server -f Dockerfile.P2 .
 
-docker run -d --rm --name server --network tcp_comm_network tcp_server
+docker run --rm --name server --network tcp_comm_network tcp_server
 docker run --name client --network tcp_comm_network tcp_client
 
 # Kopieren der Logs je nach Konfiguration
