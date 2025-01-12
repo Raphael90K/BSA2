@@ -20,7 +20,7 @@ long get_time_in_nanoseconds() {
 int main() {
     // Semaphoren öffnen
     sem_t *sem_a = sem_open(SEM_A_NAME, O_CREAT, 0666, 0); // Startwert 0
-    sem_t *sem_b = sem_open(SEM_B_NAME, O_CREAT, 0666, 1); // Startwert 1
+    sem_t *sem_b = sem_open(SEM_B_NAME, O_CREAT, 0666, 0); // Startwert 0
     if (sem_a == SEM_FAILED || sem_b == SEM_FAILED) {
         perror("Fehler beim Öffnen der Semaphoren");
         return 1;

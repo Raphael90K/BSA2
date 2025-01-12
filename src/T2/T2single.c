@@ -83,7 +83,7 @@ int main() {
 
     // Semaphoren initialisieren
     sem_init(&sem_a, 0, 0); // Startwert 0: Thread A wartet initial
-    sem_init(&sem_b, 0, 1); // Startwert 1: Thread B beginnt
+    sem_init(&sem_b, 0, 0); // Startwert 1: Thread B beginnt
 
     // Threads starten
     pthread_create(&thread_a, NULL, thread_a_func, NULL);
