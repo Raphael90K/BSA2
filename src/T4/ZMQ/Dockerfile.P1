@@ -2,7 +2,7 @@ FROM gcc:latest
 WORKDIR /app
 COPY T4P1.c .
 RUN apt-get update && apt-get install -y \
-    libzmq3-dev \
+    libzmq-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 RUN gcc T4P1.c -o T4P1 -lzmq
