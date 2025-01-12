@@ -11,7 +11,7 @@ long min_times[NUM_REPEATS]; // Mindestzeiten für jede Wiederholung
 // Hilfsfunktion für präzise Zeitmessung
 long get_time_in_nanoseconds() {
     struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts); // Hohe Präzision, monotone Uhr
+    clock_gettime(CLOCK_MONOTONIC, &ts);
     return ts.tv_sec * 1e9 + ts.tv_nsec;
 }
 
