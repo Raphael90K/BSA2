@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 #define NUM_MEASUREMENTS 100
-#define NUM_REPEATS 100
+#define NUM_REPEATS 1000
 #define SEM_A_NAME "/sem_a"
 #define SEM_B_NAME "/sem_b"
 

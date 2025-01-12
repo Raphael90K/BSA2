@@ -5,7 +5,7 @@
 #include <string.h>
 
 #define NUM_MEASUREMENTS 100
-#define NUM_REPEATS 100
+#define NUM_REPEATS 1000
 long min_times[NUM_REPEATS]; // Mindestzeiten für jede Wiederholung
 
 // Hilfsfunktion für präzise Zeitmessung

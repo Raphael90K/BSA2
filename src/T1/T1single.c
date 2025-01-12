@@ -29,7 +29,7 @@ void release_spinlock() {
 
 // Globale Variablen für die Ergebnisse
 #define NUM_MEASUREMENTS 100
-#define NUM_REPEATS 100
+#define NUM_REPEATS 1000
 
 long thread_a_times[NUM_MEASUREMENTS];
 long min_times[NUM_REPEATS]; // Mindestzeiten aus jeder Wiederholung

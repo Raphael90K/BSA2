@@ -10,7 +10,7 @@
 #include <sys/stat.h>
 
 #define NUM_MEASUREMENTS 100
-#define NUM_REPEATS 100
+#define NUM_REPEATS 1000
 
 // Shared Memory für Spinlock und Turn
 #define SHM_NAME "/spinlock_shm"

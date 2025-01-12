@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 #define NUM_MEASUREMENTS 100
-#define NUM_REPEATS 100
+#define NUM_REPEATS 1000
 #define SEM_A_NAME "/sem_a"
 #define SEM_B_NAME "/sem_b"
 
@@ -62,7 +62,7 @@ int main() {
     }
 
     // Ergebnisse in eine CSV-Datei schreiben
-    FILE *csv_file = fopen("T2_semaphore_2P_times.csv", "w");
+    FILE *csv_file = fopen("T2_sema_2P_min_times.csv", "w");
     if (!csv_file) {
         perror("Fehler beim Öffnen der Datei");
         return 1;
@@ -78,6 +78,6 @@ int main() {
     sem_close(sem_a);
     sem_close(sem_b);
 
-    printf("Ergebnisse in 'T2_semaphore_2P_times.csv' gespeichert.\n");
+    printf("Ergebnisse in 'T2_sema_2P_min_times.csv' gespeichert.\n");
     return 0;
 }

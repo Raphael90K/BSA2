@@ -9,8 +9,8 @@
 
 #define SERVER_IP "172.18.0.2"    // Hostname des Servers im Docker-Netzwerk
 #define SERVER_PORT 5555      // Port des Servers
-#define NUM_MEASUREMENTS 100  // Anzahl der Messungen pro Wiederholung
-#define NUM_REPEATS 100       // Anzahl der Wiederholungen
+#define NUM_MEASUREMENTS 100
+#define NUM_REPEATS 1000       // Anzahl der Wiederholungen
 
 // Hilfsfunktion für präzise Zeitmessung
 long get_time_in_nanoseconds() {

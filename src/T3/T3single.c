@@ -14,7 +14,7 @@ long get_time_in_nanoseconds() {
 
 // Globale Variablen
 #define NUM_MEASUREMENTS 100
-#define NUM_REPEATS 100
+#define NUM_REPEATS 1000
 long min_times[NUM_REPEATS]; // Mindestzeiten für jede Wiederholung
 
 // ZeroMQ-Kontext (wird von beiden Threads geteilt)
