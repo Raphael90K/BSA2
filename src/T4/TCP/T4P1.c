@@ -19,6 +19,23 @@ long get_time_in_nanoseconds() {
     return ts.tv_sec * 1e9 + ts.tv_nsec;
 }
 
+
+int read(int socket, char *buffer, size_t length) {
+    size_t bytes_read = 0;
+    while (bytes_read < length) {
+        ssize_t result = recv(socket, buffer + bytes_read, length - bytes_read, 0);
+        if (result < 0) {
+            perror("Fehler beim Empfang der Daten");
+            return -1; // Fehler beim Lesen
+        } else if (result == 0) {
+            fprintf(stderr, "Verbindung wurde geschlossen\n");
+            return -1; // Verbindung geschlossen
+        }
+        bytes_read += result;
+    }
+    return 0; // Erfolgreich gelesen
+}
+
 // Funktion für die Zeitmessungen
 void perform_measurements() {
     long min_times[NUM_REPEATS];
@@ -62,7 +79,7 @@ void perform_measurements() {
             }
 
             // Antwort empfangen
-            if (recv(client_socket, response, sizeof(response), 0) < 0) {
+            if (read(client_socket, response, sizeof(response)) < 0) {
                 perror("Fehler beim Empfang der Antwort");
                 continue;
             }

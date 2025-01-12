@@ -8,6 +8,22 @@
 #define SERVER_PORT 5555
 #define BACKLOG 1 // Maximale Anzahl gleichzeitiger Verbindungen
 
+int read_msg(int socket, char *buffer, size_t length) {
+    size_t bytes_read = 0;
+    while (bytes_read < length) {
+        ssize_t result = recv(socket, buffer + bytes_read, length - bytes_read, 0);
+        if (result < 0) {
+            perror("Fehler beim Empfang der Daten");
+            return -1; // Fehler beim Lesen
+        } else if (result == 0) {
+            fprintf(stderr, "Verbindung wurde geschlossen\n");
+            return -1; // Verbindung geschlossen
+        }
+        bytes_read += result;
+    }
+    return 0; // Erfolgreich gelesen
+}
+
 void run_server() {
     int server_socket, client_socket;
     struct sockaddr_in server_address, client_address;
@@ -54,7 +70,7 @@ void run_server() {
         memset(buffer, 0, sizeof(buffer));
 
         // Nachricht empfangen
-        if (recv(client_socket, buffer, sizeof(buffer), 0) <= 0) {
+        if (read_msg(client_socket, buffer, sizeof(buffer)) <= 0) {
             printf("Verbindung geschlossen oder Fehler beim Empfang.\n");
             break;
         }
