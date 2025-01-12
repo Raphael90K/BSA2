@@ -60,7 +60,7 @@ void run_server() {
         }
 
         // Antwort senden
-        if (send(client_socket, buffer, strlen(buffer), 0) < 0) {
+        if (send(client_socket, buffer, sizeof(buffer), 0) < 0) {
             perror("Fehler beim Senden der Antwort");
             break;
         }
